@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Chess</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiplayer Chess</h1>
+        
+        <div class="connection-panel">
+            <div class="peer-info">
+                <p>Your ID: <span id="peer-id">Connecting...</span></p>
+                <button id="copy-id" class="btn">Copy ID</button>
+            </div>
+            
+            <div class="connect-form">
+                <input type="text" id="remote-peer-id" placeholder="Enter opponent's ID">
+                <button id="connect-btn" class="btn">Connect</button>
+            </div>
+            
+            <div id="connection-status" class="status"></div>
+        </div>
+        
+        <div class="game-container">
+            <div class="game-info">
+                <p id="turn-indicator">White's Turn</p>
+                <p id="player-color">You are: <span id="color-display">-</span></p>
+            </div>
+            
+            <div id="chess-board" class="chess-board"></div>
+            
+            <div class="captured-pieces">
+                <div class="captured white-captured">
+                    <h3>White Captured</h3>
+                    <div id="white-captured-pieces"></div>
+                </div>
+                <div class="captured black-captured">
+                    <h3>Black Captured</h3>
+                    <div id="black-captured-pieces"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <h2 id="game-over-message"></h2>
+                <button id="new-game-btn" class="btn">New Game</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="chess.js"></script>
+    <script src="multiplayer.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
